@@ -10,7 +10,7 @@ import { ColorsContext } from '../../views/NewPallete';
 
 
 const SortableItem = SortableElement(({color, id}) => {
-  return <FullItem bgC={color.colorValue} cC={color.colorValue} id={id} />
+  return <FullItem bgC={color.colorValue} cC={color.name} id={id} />
 });
 
 

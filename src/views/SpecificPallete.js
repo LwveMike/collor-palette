@@ -11,6 +11,14 @@ import { AppContainer, MiniContainer } from '../components/PalleteHeader/Pallete
 import {ColorPresentedBackground} from '../components/ColorPresented/ColorPresented';
 import ColorGrid from '../components/ColorGrid/ColorGrid';
 import CopyColor from '../components/ColorCopy/ColorCopy';
+import {CopyButton} from '../components/ColorPresented/ColorPresented';
+
+
+const Footer = styled.footer`
+    width: 100vw;
+    height: calc(100vh - 48px);
+    background-color: white;
+`;
 
 
 function NewHeader() {
@@ -77,6 +85,7 @@ const Code = styled.div`
 
 
 
+
 function SpecificPallete() {
 
   const {id} = useParams();
@@ -99,13 +108,15 @@ function SpecificPallete() {
     <NewHeader />
         <ColorGrid>
         { colors.map(color => {
-          return <ColorPresentedBackground maxHeight={'50%'} minHeight={'10%'} bgC={color} key={color} >
+          return <ColorPresentedBackground maxHeight={'50%'} minHeight={'10%'} bgC={color} key={color} style={{height: '50%'}} >
+              <CopyButton bgC={color} >COPY</CopyButton>
           <CopyColor pos={pos} setPos={setPos} bgC={principalColor} theValue={color} level={100} format={'HEX'} />
             <Code>{color}</Code>
           </ColorPresentedBackground>
         })}
             <RemainingSpace children={<BackButton onClick={() => history.goBack()}>BACK</BackButton>} />
         </ColorGrid>
+        <Footer />
     </>
 }
 

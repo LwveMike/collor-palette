@@ -9,10 +9,9 @@ import { ColorCode } from '../Item/Item';
 import ColorCopy from '../../components/ColorCopy/ColorCopy';
 
 
-export const getColorByBgColor = (bgColor, level) => {
+export const getColorByBgColor = (bgColor) => {
     if (!bgColor) { return ''; }
-    return (parseInt(bgColor.replace('#', ''), 16) > 0xffffff / 3 ? 'rgba(0, 0, 0, 0.7)' :
-             parseInt(bgColor.replace('#', ''), 16) > 0xffffff / 1.5 ? 'rgba(0, 0, 0, 0.7)' : 'rgb(242, 242, 242)');
+    return (parseInt(bgColor.replace('#', ''), 16) > 0xffffff / 2 ? 'rgba(0, 0, 0, 0.7)' : 'rgb(242, 242, 242)');
 }
 
 export const MoreButton = styled.button`

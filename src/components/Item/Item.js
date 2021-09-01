@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {ColorsContext} from '../../views/NewPallete';
 
 
+
 const TrashButton = styled.div`
 
     position: absolute;
